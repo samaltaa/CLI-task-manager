@@ -48,5 +48,23 @@ int main() {
 
         int choice;
         std::cin >> choice;
+
+        if (choice == 1){
+            std::string name, description;
+            std::cout << "Enter task name: ";
+            std::cin.ignore();
+            std::getline(std::cin, name);
+            std::cout << "Enter task description: ";
+            std::getline(std::cin, description);
+            Task task(name, description);
+            taskManager.addTask(task);
+        } else if (choice == 2) {
+            taskManager.listTasks();
+        } else if (choice == 3) {
+            break;
+        } else {
+            std::cout << "Invalid choice\n";
+        }
     }
+    return 0;
 }
